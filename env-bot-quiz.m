@@ -10,7 +10,6 @@
 \ 1. Formatting
 
 
-
 \ 2. Q&A list, Rooms
 
 room: quiz
@@ -55,7 +54,7 @@ Q: Reduce|Reuse
 A: That is indeed a good option, but there is a better one! Try again! <br> ${ "Refuse" button } ${ "Reduce" button } ${ "Reuse" button }
 --
 Q: >
-A: All right, that's all the quizzes for today! You now know enough to become a green warrior! While you're at it, here's a website to calculate your carbon footprint to learn more: https://climatehero.me/ <br><br> Now let's try something else! <br> ${ "Environmental Practices" button }  ${ "Environmental Resources" button }
+A: All right, that's all the quizzes for today! You now know enough to become a green warrior! <br> ${ "https://i.ibb.co/2gxR5c0/Picture2.png" } <br> While you're at it, here's a website to calculate your carbon footprint to learn more: https://climatehero.me/ <br><br> Now let's try something else! <br> ${ "Environmental Practices" button }  ${ "Environmental Resources" button }
 
 \ Include a badge here if possible.
 

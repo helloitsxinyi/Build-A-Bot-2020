@@ -15,15 +15,15 @@
 \ 1. Formatting
 @: blog scientific_data climate_conspiracy
 
-blog: blog
-scientific_data: scientific_data
+blog: blog another
+scientific_data: scientific_data next
 climate_conspiracy: climate_conspiracy
 \ eat: food eat meal 
 \ drink: drinks
 
 \ search: random_list
 \ eat_list drink_list
-assoc: blogs title
+assoc: site_a site_b title_a title_b
 \ ids author
 mem: count_a count_b
 \ id
@@ -32,51 +32,47 @@ mem: count_a count_b
     1 "http://www.bbc.com/earth/columns/earth-blog"
     2 "https://wwf.panda.org/"
     3 "http://www.zerowastesg.com/"
-    4 "https://drawdown.org/solutions/table-of-solutions"
-    5 "https://www.ipcc.ch/reports/"
-    6 "https://www.towardszerowaste.sg/"
-}} +blogs
+}} +site_a
+
+{{
+    1 "https://drawdown.org/solutions/table-of-solutions"
+    2 "https://www.ipcc.ch/reports/"
+    3 "https://www.towardszerowaste.sg/"
+}} +site_b
 
 {{
     1 "BBC Earth!"
     2 "World Wildlife Fund!"
     3 "ZeroWaste Singapore?"
-    4 "Project Drawndown?"
-    5 "International Governmental Panel for Climate Change?"
-    6 "ZeroWaste Singapore!"
-}} +title
+}} +title_a
+
+{{
+    1 "Project Drawndown?"
+    2 "International Governmental Panel for Climate Change?"
+    3 "ZeroWaste Singapore!"
+}} +title_b
+
 \ 2. Q&A list, Rooms
 
 room: resources
 
 Q: Gogo
 A: What website would interest you? ${ "Blog" button } ${ "Scientific Data" button } ${ "Climate Conspiracy" button }
-\ ${ "Scientific Data" button } ${ "Climate Conspiracy" button }
 --
-
-\ Currently, you can't add buttons with two words in it (someone else on the group is having the same problem). still tryna figure it out.
-\ in the meantime, i used the following buttons:
 Q: $x.@blog
-\ A: Try this!
-A: ${ count_a title } ${ count_a blogs } ... or another?
+A: count_a 4 < % ${ count_a title_a } ${ count_a site_a } ... ${ "Another" button }?
+A: count_a 4 >= % ${ 3 title_a } ${ 4 site_a } <br> Or.. ${ "Scientific Data" button } ${ "Climate Conspiracy" button } <br><br> Now let's try something else! <br> ${ "Environmental Practices" button }  ${ "Environmental Quiz" button }
 K: +count_a %
 --
 
 Q: $scientific_data
-A: ${ count_b title } ${ count_b blogs } ... or another?
+A: count_b 3 < % ${ count_b title_b } ${ count_b site_b } ... ${ "Next" button }?
+A: count_b 3 >= % ${ 3 title_b } ${ 3 site_b } <br> Or.. ${ "Blog" button } ${ "Climate Conspiracy" button } <br><br> Now let's try something else! <br> ${ "Environmental Practices" button }  ${ "Environmental Quiz" button }
 K: +count_b %
 --
 
 Q: $climate_conspiracy
-A: Unfortunately I cannot find any websites for this! Still, it's always great to have a questioning mind - as it stands, we currently do not know a lot of things for certain! Indeed, there is a video called "The Great Global Warming Swindle"! Check it out here: https://www.youtube.com/watch?v=oYhCQv5tNsQ
+A: Unfortunately I cannot find any websites for this! Still, it's always great to have a questioning mind - as it stands, we currently do not know a lot of things for certain! Indeed, there is a video called "The Great Global Warming Swindle"! Check it out here: https://www.youtube.com/watch?v=oYhCQv5tNsQ <br> Next, maybe <br> ${ "Blog" button } ${ "Scientific Data" button } <br><br> Now let's try something else! <br> ${ "Environmental Practices" button }  ${ "Environmental Quiz" button }
 --
-\ ### TO PUT IN THE bot.m file after all micro-topics are done!
-\ Q: $_
-\ A: Looks like you don't want to talk about Environmental Websites anymore! Shall we move to another topic?
-\ L: ${ last-question }
-\ --
-\ Q: $x.@eat
-\ $x eat_list ids id! % ${ id title } by ${ id author } ${ id image }
-\ --
 
 end-room

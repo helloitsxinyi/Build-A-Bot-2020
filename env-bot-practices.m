@@ -14,14 +14,7 @@ specific: specific
 consumption: personal_consumption consumption personal
 habit: little habit little_habit
 bigger_thing: bigger thing bigger_thing
-
-
-
-
 assoc: random_list image
-
-
-
 mem: count
 
 
@@ -48,7 +41,7 @@ mem: count
     4 "https://live.staticflickr.com/7403/9087989902_a370b851e7_b.jpg"
     5 "https://www.onekind.scot/wp-content/uploads/plasticwaste-seal-edit.jpg"
     6 "https://thesmartlocal.com/wp-content/uploads/2019/06/images_easyblog_articles_7921_Zero-Waste-stores-in-Singapore-23-1.jpg"
-    7 "https://www.todayonline.com/sites/default/files/styles/new_app_article_detail/public/photos/43_images/yjrally07.jpg?itok=IcA-By2i"
+    7 "https://www.todayonline.com/sites/default/files/styles/new_app_article_detail/public/photos/43_images/yjrally07.jpg"
     8 "https://outdooreducationaustralia.org.au/wp-content/uploads/Outdoor-Ed-Teenagers-in-circle.jpg"
 
 }} +image
@@ -60,7 +53,8 @@ mem: count
 room: practices
 
 Q: Gogo|Restart
-A: Do you want to see a specific practice? Or just a random one? ${ "Random" button } ${ "Specific" button }
+A: Do you want to see a specific practice? Or just a random one? ${ "Random" button } ${ "Specific" button } <br> Or might other options interest you? ${ "Environmental Quiz" button } ${ "Environmental Resources" button }
+
 --
 Q: $x.@random
 A: count 8 < % ${ count random_list } ${ count image } ${ "Another" button }
@@ -90,7 +84,4 @@ A: ${ 7 random_list } ${ 7 image } ${ "Another" button }
 \ $x eat_list ids id! % ${ id title } by ${ id author } ${ id image }
 
 \ --
-
-
-
 end-room
