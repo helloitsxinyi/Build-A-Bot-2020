@@ -14,11 +14,7 @@ specific: specific
 consumption: personal_consumption consumption personal
 habit: little habit little_habit
 bigger_thing: bigger thing bigger_thing
-
-
 assoc: random_list image
-
-
 mem: count
 
 
@@ -58,6 +54,7 @@ room: practices
 
 Q: Gogo|Restart
 A: Do you want to see a specific practice? Or just a random one? ${ "Random" button } ${ "Specific" button } <br> Or might other options interest you? ${ "Environmental Quiz" button } ${ "Environmental Resources" button }
+
 --
 Q: $x.@random
 A: count 8 < % ${ count random_list } ${ count image } ${ "Another" button }
@@ -79,4 +76,12 @@ A: ${ 3 random_list } ${ 3 image } ${ "Another" button }; ${ 4 random_list } ${ 
 Q: $bigger_thing|$bigger_thing+s
 A: ${ 7 random_list } ${ 7 image } ${ "Another" button } 
 --
+
+\ ### TO PUT IN THE bot.m file after all micro-topics are done!
+
+\ Q: $x.@eat
+
+\ $x eat_list ids id! % ${ id title } by ${ id author } ${ id image }
+
+\ --
 end-room
